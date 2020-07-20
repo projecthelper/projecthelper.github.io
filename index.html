@@ -21,6 +21,7 @@
             display: none;
             background-color: rgba(206, 206, 206, 0.438);
             text-align: center;
+            position: absolute;
         }
         body {background-color: white;}
     </style>
@@ -34,19 +35,19 @@
         <div learn><h2>배우기</h2></div>
     </div>
 
-    <div id="newbie" >
+    <div id="newbie" ><br><br>
         <h1>
             안녕하세요. 프로젝트헬퍼입니다.
-        </h1>
+        </h1><br>
         <h2>
             처음오신것 같은데, 저희 사이트는 여러분의 PPT 과제를 도와드릴 수 있는 사이트라고 소개드리겠습니다.
-        </h2>
+        </h2><br>
         <h2>
             편집만 하면 바로 사용할 수 있는 '템플릿'은 우측 상단 템플릿 메뉴에서 확인하세요.
-        </h2>
+        </h2><br>
         <h2>
             또한, 저희가 만든 위키는 우측 상단 '배우기' 메뉴에서 살펴보세요.
-        </h2>
+        </h2><br>
         <h2>
             감사합니다.
         </h2>
@@ -64,8 +65,8 @@
         else {
             Cookies.set('visit', 'yes', {expires: 7200});
             var w, h;
-            w=window.innerWidth;
-            h=window.innerHeight;
+            w=window.innerWidth +"px";
+            h=window.innerHeight + "px";
             $("#newbie").attr("style", ("width:" + w + ";height:" + h +";"));
         }
     </script>
