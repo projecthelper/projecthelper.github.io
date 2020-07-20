@@ -60,7 +60,7 @@
         function removeNewbie() {
             $("#newbie").attr("style", "display: none;");
         }
-        if (Cookies.get("visit")) return;
+        if (Cookies.get("visit")) {return;}
         else {
             Cookies.set('visit', 'yes', {expires: 7200});
             var w, h;
