@@ -17,18 +17,65 @@
             height: 140px;
             margin-top:10px;
         }
+        #newbie {
+            display: none;
+            background-color: rgba(206, 206, 206, 0.438);
+            text-align: center;
+        }
         body {background-color: white;}
     </style>
 </head>
 <body>
-    <div id="header">
+    <div id="header" main-header> <!--main header-->
         <img id="logoimg" src="assets/logo.png">
+        
+        <div main-menu><h2>메인메뉴</h2></div>
+        <div templates><h2>템플릿</h2></div>
+        <div learn><h2>배우기</h2></div>
     </div>
 
+    <div id="newbie" >
+        <h1>
+            안녕하세요. 프로젝트헬퍼입니다.
+        </h1>
+        <h2>
+            처음오신것 같은데, 저희 사이트는 여러분의 PPT 과제를 도와드릴 수 있는 사이트라고 소개드리겠습니다.
+        </h2>
+        <h2>
+            편집만 하면 바로 사용할 수 있는 '템플릿'은 우측 상단 템플릿 메뉴에서 확인하세요.
+        </h2>
+        <h2>
+            또한, 저희가 만든 위키는 우측 상단 '배우기' 메뉴에서 살펴보세요.
+        </h2>
+        <h2>
+            감사합니다.
+        </h2>
+        <button onclick="removeNewbie()">창 없애기</button>
+    </div>
+
+
+    <script src="https://code.jquery.com/jquery-3.5.1.min.js"></script> <!--jQuery-->
+
     <script>
+        function removeNewbie() {
+            $("#newbie").attr("style", "display: none;");
+        }
+        if (Cookies.get("visit")) return;
+        else {
+            Cookies.set('visit', 'yes', {expires: 7200});
+            var w, h;
+            w=window.innerWidth;
+            h=window.innerHeight;
+            $("#newbie").attr("style", ("width:" + w + ";height:" + h +";"));
+        }
+    </script>
+    <script> // 창 크기 입구컷
         if (window.outerWidth < 800) {
             alert("이 사이트는 가로 800픽셀 이상의 화면에 최적화되어있습니다. 모바일이나 태블릿화면보단 컴퓨터와 같이 큰 화면에서 보시는걸 추천드립니다.");
         }
     </script>
+
+
+    <script src="https://cdn.jsdelivr.net/npm/js-cookie@rc/dist/js.cookie.min.js"></script> <!--js-cookie-->
 </body>
 </html>
